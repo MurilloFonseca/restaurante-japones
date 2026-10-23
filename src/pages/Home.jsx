@@ -1,8 +1,31 @@
 import Card from "../components/Card"
-import banner from "../assets/banner.jpg"
-import hospitalidade from "../assets/hospitalidade.jpg"
 
 const Home = () => {
+
+  const favoritos = [
+    {
+      id: 1,
+      nome: "Combo Sushi",
+      descricao: "Uma seleção especial de sushis variados.",
+      preco: 39.90,
+      imagem: "/assets/comboSushi.jpg",
+    },
+    {
+      id: 2,
+      nome: "Hot Roll",
+      descricao: "Sushi empanado, crocante e recheado.",
+      preco: 29.90,
+      imagem: "/assets/comboEspecial.jpg",
+    },
+    {
+      id: 3,
+      nome: "Combo Especial",
+      descricao: "Uma combinação deliciosa para compartilhar.",
+      preco: 44.90,
+      imagem: "/assets/hotRol.jpg",
+    },
+  ];
+
   return (
     <>
       <main className="min-h-screen bg-[#0A0908]">
@@ -26,7 +49,7 @@ const Home = () => {
 
             <div className="flex-1 w-full">
               <img
-                src={banner}
+                src="/assets/banner.jpg"
                 alt="Combo de sushi"
                 className="w-full h-90 object-cover rounded-3xl"
               />
@@ -55,6 +78,11 @@ const Home = () => {
             </h2>
           </div>
 
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center max-w-6xl mx-auto">
+            {favoritos.map((item) => (
+              <Card key={item.id} item={item} />
+            ))}
+          </div>
 
         </section>
 
@@ -65,7 +93,6 @@ const Home = () => {
         >
           <div className="flex flex-col md:flex-row items-center gap-10 md:gap-16">
 
-            {/* Texto */}
             <div className="flex-1 text-center md:text-left">
               <p className="text-[#8a2d40] uppercase tracking-[0.25em] text-xs">
                 おもてなし · Hospitalidade
@@ -83,10 +110,9 @@ const Home = () => {
               </p>
             </div>
 
-            {/* Imagem */}
             <div className="flex-1 w-full">
               <img
-                src={hospitalidade}
+                src="/assets/hospitalidade.jpg"
                 alt="Pratos da culinária japonesa"
                 className="w-full h-80 md:h-96 object-cover rounded-3xl"
               />
