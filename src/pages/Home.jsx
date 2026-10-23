@@ -1,4 +1,6 @@
 import Card from "../components/Card"
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer"
 
 const Home = () => {
 
@@ -15,19 +17,20 @@ const Home = () => {
       nome: "Hot Roll",
       descricao: "Sushi empanado, crocante e recheado.",
       preco: 29.90,
-      imagem: "/assets/comboEspecial.jpg",
+      imagem: "/assets/hotRol.jpg",
     },
     {
       id: 3,
       nome: "Combo Especial",
       descricao: "Uma combinação deliciosa para compartilhar.",
       preco: 44.90,
-      imagem: "/assets/hotRol.jpg",
+      imagem: "/assets/comboEspecial.jpg",
     },
   ];
 
   return (
     <>
+    <Navbar/>
       <main className="min-h-screen bg-[#0A0908]">
 
         <section className="flex flex-col md:flex-row items-center gap-10 px-8 md:px-16 py-16 bg-[#5E503F]">
@@ -123,6 +126,7 @@ const Home = () => {
 
 
       </main>
+      <Footer/>
     </>
   )
 }
